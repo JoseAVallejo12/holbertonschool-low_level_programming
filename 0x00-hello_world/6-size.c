@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <sys/cdefs.h>
+
 /**
  * main - Entry point
  * task 6..
