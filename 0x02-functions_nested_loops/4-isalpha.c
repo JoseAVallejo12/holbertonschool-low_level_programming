@@ -1,7 +1,7 @@
 #include"holberton.h"
 
 /**
- *_islower - parametrer c
+ *_isalpha - parametrer c
  *@c: parametrer
  *Return: 1 for lower case or 0 for otherwise
  */
