@@ -1,4 +1,5 @@
 #include "holberton.h"
+int _putchar(char c);
 
 /**
  * main - check the code for Holberton School students.
