@@ -9,7 +9,7 @@ int _putchar(char c);
 int main(void)
 {
 	int a;
-	char c[9] = {'h', 'o', 'l', 'b', 'e', 'r', 't', 'o', 'n'};
+	char c[9] = {'H', 'o', 'l', 'b', 'e', 'r', 't', 'o', 'n'};
 
 	for (a = 0; a <= 8; a++)
 	{
