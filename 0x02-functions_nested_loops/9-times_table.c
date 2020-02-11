@@ -1,16 +1,19 @@
 #include"holberton.h"
 /**
- *void times_table - void
- *
+ *printed - void
+ *times_table - void
  *Return: 1 for lower case or 0 for otherwise
  */
+void printed(void)
+{
+	_putchar(',');
+	_putchar(' ');
+	_putchar(' ');
+}
+
 void times_table(void)
 {
-	int x, y, z, n, m;
-
-	z = 0;
-	n = 0;
-	m = 0;
+	int x = 0, y = 0, z = 0, n = 0, m = 0;
 
 	for (x = '0'; x <= '9'; x++)
 	{
@@ -21,9 +24,7 @@ void times_table(void)
 				_putchar('0');
 				if (y != '9')
 				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
+					printed();
 				}
 			}
 			z = m * n;
@@ -33,9 +34,7 @@ void times_table(void)
 
 				if (y != '9')
 				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
+					printed();
 				}
 			}
 			if (z > 9)
