@@ -1,5 +1,4 @@
 #include"holberton.h"
-#include<ctype.h>
 
 /**
  *_islower - parametrer c
