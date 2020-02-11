@@ -8,12 +8,15 @@
 
 int _islower(int c)
 {
-	int n;
+	int  n;
 
 	n = islower(c);
 	if (n != 0)
 	{
 		n = 1;
+	}else
+	{
+		n = 0;
 	}
 
 	return (n);
