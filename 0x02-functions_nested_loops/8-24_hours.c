@@ -1,14 +1,15 @@
 #include"holberton.h"
 
 /**
- *jack_bauer;- parametrer c
- *@n: parametrer
+ *jack_bauer - void
+ *
  *Return: 1 for lower case or 0 for otherwise
  */
 
 void jack_bauer(void)
 {
 	int a, b, c, d;
+
 	for (a = '0'; a <= '2'; a++)
 	{
 		for (b = '0'; b <= '3'; b++)
