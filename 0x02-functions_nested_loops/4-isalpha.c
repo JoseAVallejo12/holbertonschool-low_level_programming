@@ -7,11 +7,11 @@
  *Return: 1 for lower case or 0 for otherwise
  */
 
-int _islower(int c)
+int _isalpha(int c)
 {
 	int n;
 
-	n = islower(c);
+	n = isalpha(c);
 	if (n != 0)
 	{
 		n = 1;
