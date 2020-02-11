@@ -1,4 +1,5 @@
-#include"ctype.h"
+#include"holberton.h"
+#include<ctype.h>
 
 /**
  *_islower - parametrer c
@@ -14,7 +15,8 @@ int _islower(int c)
 	if (n != 0)
 	{
 		n = 1;
-	}else
+	}
+	else
 	{
 		n = 0;
 	}
