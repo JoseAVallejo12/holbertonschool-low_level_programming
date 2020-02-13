@@ -23,13 +23,13 @@ int main(void)
 			printf("%d ", a);
 
 		if (b == 0 && c != 0)
-			printf(" %s ", nam1);
+			printf("%s ", nam1);
 
 		if (c == 0 && b != 0)
-			printf(" %s ", nam2);
+			printf("%s ", nam2);
 
 		if (b == 0 && a == 0)
-			printf(" %s ", nam3);
+			printf("%s ", nam3);
 	}
 	printf("\n");
 }
