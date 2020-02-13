@@ -1,7 +1,18 @@
 #include "holberton.h"
 
 /**
- *more_numbers - Print number of 0 to 9 and exclude 2, and 4
+ *myprint - print values
+ *Return: always void
+ *@c: Parameter
+ */
+
+void myprint(int c)
+{
+	_putchar(c);
+}
+
+/**
+ *more_numbers - print ten times the numbers 0 to 14
  *Return: always void
  */
 
@@ -20,15 +31,15 @@ void more_numbers(void)
 			c = b / 10;
 			d = b % 10;
 			if (b <= 9)
-				_putchar(b + 48);
+				myprint(b + 48);
 			if (b > 9)
 			{
-				_putchar(c + 48);
-				_putchar(d + 48);
+				myprint(c + 48);
+				myprint(d + 48);
 			}
 			b++;
 		}
-		_putchar('\n');
+		myprint('\n');
 		b = 0;
 		a++;
 	}
