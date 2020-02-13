@@ -42,7 +42,7 @@ int main(void)
 		if (c == 0)
 			myprint(nam2, a);
 
-		if (b == 0 && a == 0)
+		if (b == 0 && c == 0)
 			myprint(nam3, a);
 	}
 	printf("\n");
