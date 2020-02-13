@@ -46,5 +46,6 @@ int main(void)
 			myprint(nam3, a);
 	}
 	printf("\n");
+	return (0);
 }
 
