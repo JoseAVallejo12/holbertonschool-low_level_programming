@@ -1,6 +1,18 @@
 #include <stdio.h>
 
 /**
+ *myprint - print whint printf funtion
+ *@name: Parameter
+ *@n: Parameter
+ */
+void myprint(char name[], int n)
+{
+	printf("%s", name);
+	if (n != 100)
+		printf(" ");
+}
+
+/**
  *main - print numbers
  *
  *Return: Always zero
@@ -20,16 +32,18 @@ int main(void)
 		b = a % 3;
 		c = a % 5;
 		if (b != 0 && c != 0)
-			printf("%d ", a);
+		{
+			printf("%d", a);
+			printf(" ");
+		}
+		if (b == 0)
+			myprint(nam1, a);
 
-		if (b == 0 && c != 0)
-			printf("%s ", nam1);
-
-		if (c == 0 && b != 0)
-			printf("%s ", nam2);
+		if (c == 0)
+			myprint(nam2, a);
 
 		if (b == 0 && a == 0)
-			printf("%s ", nam3);
+			myprint(nam3, a);
 	}
 	printf("\n");
 }
