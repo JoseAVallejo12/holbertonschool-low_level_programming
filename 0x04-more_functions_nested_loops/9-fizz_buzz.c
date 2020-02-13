@@ -36,10 +36,10 @@ int main(void)
 			printf("%d", a);
 			printf(" ");
 		}
-		if (b == 0)
+		if (b == 0 && c != 0)
 			myprint(nam1, a);
 
-		if (c == 0)
+		if (c == 0 && b != 0)
 			myprint(nam2, a);
 
 		if (b == 0 && c == 0)
