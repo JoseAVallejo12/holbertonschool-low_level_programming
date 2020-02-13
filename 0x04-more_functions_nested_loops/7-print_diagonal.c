@@ -1,11 +1,9 @@
 #include "holberton.h"
-
 /**
  *myprint - ptint n times
  *@n: Parameter
  *Return: always void
  */
-
 void myprint(int n)
 {
 	int i;
@@ -19,7 +17,6 @@ void myprint(int n)
  *@n: Parameter
  *Return: always return zero
  */
-
 void print_diagonal(int n)
 {
 	int i;
