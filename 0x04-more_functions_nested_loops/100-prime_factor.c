@@ -8,10 +8,11 @@
 
 int main(void)
 {
-	long int n;
+	long int n, div, maxFact;
 
 	n = 612852475143;
-	long int div = 2, maxFact;
+	div = 2;
+	maxFact = 0;
 
 	while (n != 0)
 	{
@@ -30,3 +31,4 @@ int main(void)
 	}
 	return (0);
 }
+
