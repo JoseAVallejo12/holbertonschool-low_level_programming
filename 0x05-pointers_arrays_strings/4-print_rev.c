@@ -1,25 +1,23 @@
 #include "holberton.h"
 
 /**
- *rev_string - check the code for Holberton School students.
+ *print_rev - check the code for Holberton School students.
  *@s: Parameters*
  * Return: Always void.
  */
 
-void rev_string(char *s)
+void print_rev(char *s)
 {
-	int n, i;
+	int n;
 
 	n = 0;
 	while (s[n] != '\0')
-	}
 		n++;
-	
-	}
-	for (i = n; i <= 0; i--)
-	 	_putchar('\n');
 
+	while (n--)
+		_putchar(s[n]);
 
+	_putchar('\n');
 
 }
 
