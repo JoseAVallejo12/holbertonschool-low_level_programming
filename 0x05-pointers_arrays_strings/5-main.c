@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-	char s[50] = "el chequer si es un hp";
+	char s[50] = "Holberton";
 
 	printf("%s\n", s);
 	rev_string(s);
