@@ -1,25 +1,20 @@
 #include "holberton.h"
 
 /**
- *_strcpy - Copie a string pointed
- *@dest: Destination
- *@src: Sender
- *Return: A char
- */i
+ * _strcpy - Copie a string pointed
+ * @dest: Destination
+ * @src: Sender
+ * Return: A char
+ */
 
 char *_strcpy(char *dest, char *src)
 {
-	int n;
+	int c;
 
-	n = 0;
+	for (c = 0; src[c] != '\0'; c++)
+		dest[c] = src[c];
 
-	while (src[n] != '\0')
-	{
-		dest[n] = src[n];
-		n++;
-	}
-	dest[n] = '\0';
+	dest[c] = '\0';
 
 	return (dest);
 }
-
