@@ -1,8 +1,9 @@
 #include "holberton.h"
 
 /**
- *rev_string - reverse a string
- *@s: Parameter
+ *reverse_array - reverse a array of the integers
+ *@a: Parameter
+ *@n: legenth of array
  *Return: Always void
  */
 
