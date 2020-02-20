@@ -9,4 +9,5 @@ void puts2(char *str);
 void puts_half(char *str);
 void print_array(int *, int);
 char *_strcpy(char *, char *);
+int _atoi(char *s);
 
