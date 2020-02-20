@@ -19,7 +19,8 @@ char *_strncpy(char *dest, char *src, int n)
 		b++;
 		if (src[b] == '\0')
 		{
-			dest[b] = '\0';
+			for (;b != n;b++)
+				dest[b] = '\0';
 			break;
 		}
 	}
