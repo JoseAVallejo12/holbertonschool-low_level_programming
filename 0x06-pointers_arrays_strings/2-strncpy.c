@@ -1,30 +1,28 @@
 #include "holberton.h"
 
 /**
- **_strncat - funtion concatenate string
- *@*dest: Parameter in
- *@*src: Parameter to join
+ *_strncpy - funtion concatenate string
+ *@dest: Parameter in
+ *@src: Parameter to join
+ *@n: Bytes numbers
  *Return: String
  */
 
-char *_strncat(char *dest, char *src, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
-	int a, b, ab;
+	int b;
 
-	a = 0;
 	b = 0;
-	ab = 0;
-	while(dest[a] != '\0')
-		a++;
-	while(ab < n && src[b] != '\0')
+	while (b != n)
 	{
-		dest[a] = src[b];
+		dest[b] = src[b];
 		b++;
-		a++;
-		ab++;
+		if (src[b] == '\0')
+		{
+			dest[b] = '\0';
+			break;
+		}
 	}
-	a++;
-	dest[a] = '\0';
 	return (dest);
 }
 
