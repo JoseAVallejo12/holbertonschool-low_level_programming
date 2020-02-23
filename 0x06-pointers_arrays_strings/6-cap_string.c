@@ -20,14 +20,16 @@ char *cap_string(char *s)
 			if (*(sep + j) == *(s + i))
 			{
 				m = 1;
+				break;
 			}
 		}
+		if (i == 0 && *(s + i) >= 'a' && *(s + i) <= 'z')
+			*(s + i)  = *(s + i) - 32;
 
 		i++;
 		if (m == 1 && *(s + i) >= 'a' && *(s + i) <= 'z')
-		{
 			*(s + i)  = *(s + i) - 32;
-		}
+
 		m = 0;
 	}
 	return (s);
