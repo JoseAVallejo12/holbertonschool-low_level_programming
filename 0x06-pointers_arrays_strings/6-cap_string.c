@@ -11,29 +11,26 @@ char *cap_string(char *s)
 {
 	char sep[] = {',', '.', ' ', '?', '(', '}', ')', '{', '!', '\t', ';', '\n'};
 	int i, j, m;
-	char *c, aux;
+	char aux;
 
 	i = j = m = 0;
-	c = s;
 
 	while (s[i] != '\0')
 	{
 		j = 0;
-		while (sep[j] != '\0')
+		for (; sep[j] != '\0'; j++)
 		{
-			if (sep[j] == *(s + i))
+			if (*(sep + j) == *(s + i))
 				m = 1;
-
-			j++;
 		}
 		i++;
-		if (m == 1 && *(c + i) >= 'a' && *(c + i) <= 'z')
+		if (m == 1 && *(s + i) >= 'a' && *(s + i) <= 'z')
 		{
 			aux  = *(s + i) - 32;
-			*(c + i) = aux;
+			*(s + i) = aux;
 		}
 		m = 0;
 	}
-	return (c);
+	return (s);
 }
 
