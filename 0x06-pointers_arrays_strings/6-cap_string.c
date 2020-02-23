@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * cap_string - capitalizes each letter
@@ -8,21 +9,31 @@
 
 char *cap_string(char *s)
 {
-	int i;
+	char separators[] = {',','.',' ','?','(','}',')','{','!','\t',';','\n'};
+	int i, j, m;
+	char *c, aux;
 
-	if (s[0] >= 'a' && s[0] <= 'z')
+	i = j = m = 0;
+	c = s;
+
+	while (s[i] != '\0')
 	{
-		s[0] = s[0] - 32;
-	}
-	for (i = 1; s[i] != '\0'; i++)
-	{
-		if ((s[i - 1] == ',' || s[i - 1] == ';' || s[i - 1] == '!'
-					|| s[i - 1] == '?' || s[i - 1] == '"' || s[i - 1] == '('
-					|| s[i - 1] == ')' || s[i - 1] == '{' || s[i - 1] == '}'
-					|| s[i - 1] == '.'))
+		j = 0;
+		while (separators[j] != '\0')
 		{
-			s[i] = s[i] - 32;
+			if (separators[j] == *(s + i))
+				m = 1;
+
+			j++;
 		}
+		i++;
+		if (m == 1 && *(c + i) >= 'a' && *(c + i) <= 'z')
+		{
+			aux  = *(s + i) - 32;
+			*(c + i) = aux;
+		}
+		m = 0;
 	}
-	return (s);
+	return (c);
 }
+
