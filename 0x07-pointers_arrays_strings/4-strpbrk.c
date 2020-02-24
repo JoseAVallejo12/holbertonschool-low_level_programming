@@ -1,13 +1,13 @@
 #include "holberton.h"
 
 /**
- *_strspn - gets length of a prefix
+ *_strpbrk - gets length of a prefix
  *@s: initial segment
  *@accept: prefix
  *Return: Always integer
  */
 
-unsigned int _strspn(char *s, char *accept)
+char *_strpbrk(char *s, char *accept)
 {
 	int i, j;
 
@@ -16,11 +16,10 @@ unsigned int _strspn(char *s, char *accept)
 		for (j = 0; accept[j]; j++)
 		{
 			if (accept[j] == s[i])
-				break;
+				return (s + i);
 		}
-		if (!accept[j])
-			break;
 	}
-	return (i);
+
+	return (0);
 }
 
