@@ -23,6 +23,6 @@ char *_strchr(char *s, char c)
 		}
 	}
 
-	return (str = NULL);
+	return (str = "");
 }
 
