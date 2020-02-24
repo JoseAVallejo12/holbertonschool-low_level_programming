@@ -1,6 +1,29 @@
 #include "holberton.h"
 
 /**
+ *_equal - find sames characters
+ *@dest: initial segment
+ *@src: prefix
+ *Return: Always int
+ */
+int _equal(char *dest, char *src)
+{
+	int i;
+
+	i = 0;
+
+	while (*dest + i != '\0' && *src + i != '\0')
+	{
+		if (*dest != *src)
+			return (0);
+		dest++;
+		src++;
+	}
+
+	return (*src == '\0');
+}
+
+/**
  *_strstr - find
  *@haystack: initial segment
  *@needle: prefix
@@ -9,29 +32,12 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j;
-
-	if (haystack == '\0')
-		return ('\0');
-	if (needle == '\0')
-		return (haystack);
-
-	for (i = 0; haystack[i] != '\0'; i++)
+	while (*haystack != '\0')
 	{
-		for (j = 0; needle[j] != '\0'; j++)
-		{
-			if (*(haystack + i) == needle[j])
-				i++;
-			else
-				break;
-		}
-		if (haystack[i-j] == *needle)
-		{
-			i -= j;
-			return (haystack + i);
-		}
+		if ((*haystack == *needle) && _equal(haystack, needle))
+			return (haystack);
+		haystack++;
 	}
 
 	return (0);
 }
-
