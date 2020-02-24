@@ -32,6 +32,12 @@ int _equal(char *dest, char *src)
 
 char *_strstr(char *haystack, char *needle)
 {
+	if (haystack == '\0')
+		return ('\0');
+
+	if (needle == '\0')
+		return (haystack);
+
 	while (*haystack != '\0')
 	{
 		if ((*haystack == *needle) && _equal(haystack, needle))
