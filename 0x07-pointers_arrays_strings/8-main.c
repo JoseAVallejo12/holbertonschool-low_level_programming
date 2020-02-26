@@ -24,3 +24,4 @@ int main(void)
 	print_diagsums((int *)c5, 5);
 	return (0);
 }
+
