@@ -1,2 +1,2 @@
-tatic librerys in C
-Jose Vallejo
+#tatic librerys in C
+#Jose Vallejo
