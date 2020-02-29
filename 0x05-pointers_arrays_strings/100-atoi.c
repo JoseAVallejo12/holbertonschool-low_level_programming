@@ -29,7 +29,7 @@ int _atoi(char *s)
 		}
 		n++;
 	}
-	if(num > 0)
+	if (num > 0)
 		return (num * sig);
 
 	return (0);
