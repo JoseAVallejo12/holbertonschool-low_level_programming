@@ -10,7 +10,8 @@
 
 int _atoi(char *s)
 {
-	int n, num, sig;
+	unsigned int n, num;
+	int sig;
 
 	n = 0;
 	num = 0;
@@ -29,9 +30,7 @@ int _atoi(char *s)
 		}
 		n++;
 	}
-	if (num > 0)
-		return (num * sig);
 
-	return (0);
+	return (num * sig);
 }
 
