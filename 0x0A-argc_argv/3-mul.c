@@ -43,7 +43,8 @@ int _atoi(char *s)
 
 int main(int argc, char *argv[])
 {
-	if (argc <= 1)
+	(void) argc;
+	if (*(argv + 1) == '\0' || *(argv + 2) == '\0')
 		printf("Error\n");
 	else
 		printf("%d\n", _atoi(argv[1]) * _atoi(argv[2]));
