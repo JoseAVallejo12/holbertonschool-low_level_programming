@@ -23,8 +23,8 @@ int _atoi(char *s)
 
 		if (s[n] >= '0' && s[n] <= '9')
 		{
-			num = num * 10 + s[n] - '0';
-			if (s[n + 1] < '0' || s[n + 1] > '9')
+			num = num * 10 + (s[n] - '0');
+			if (s[n + 1] == ' ')
 				break;
 		}
 		n++;
