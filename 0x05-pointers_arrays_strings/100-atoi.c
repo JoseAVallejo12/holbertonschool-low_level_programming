@@ -27,9 +27,11 @@ int _atoi(char *s)
 			if (s[n + 1] < '0' || s[n + 1] > '9')
 				break;
 		}
-
 		n++;
 	}
+	if(num > 0)
+		return (num * sig);
 
-	return (num * sig);
+	return (0);
 }
+
