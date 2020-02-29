@@ -4,6 +4,8 @@
  *_atoi - back int of the string
  *@s: Punter char
  *Return: integer number
+ *Descripcion:
+ *Write a function that convert a string to an integer.
  */
 
 int _atoi(char *s)
@@ -16,13 +18,16 @@ int _atoi(char *s)
 
 	while (s[n] != '\0')
 	{
-		if(s[n] >= '0' && s[n] <= '9')
-			num = num * 10 + s[n] - '0';
-
 		if (s[n] == '-')
-			printf("%d ",sig *= -1);
-		if (num != 0 && (s[n + 1] >= '0' && s[n + 1] <= '9'))
-			;
+			sig *= -1;
+
+		if (s[n] >= '0' && s[n] <= '9')
+		{
+			num = num * 10 + s[n] - '0';
+			if (s[n + 1] < '0' || s[n + 1] > '9')
+				break;
+		}
+
 		n++;
 	}
 
