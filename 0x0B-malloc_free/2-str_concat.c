@@ -25,7 +25,7 @@ char *str_concat(char *s1, char *s2)
 	char *arr;
 	unsigned int i, j, size;
 
-	if (s1 == 0 || s2 == 0)
+	if (s2 == 0)
 		return (NULL);
 
 	size = _strlen(s1) * _strlen(s2) + 1;
