@@ -1,40 +1,44 @@
 #include "holberton.h"
-
 /**
- *alloc_grid - allocated
- *@width: width of the grid
- *@height: height of the grid
- *Return: Nothing.
+ * alloc_grid - allocates a grid, make space and free space
+ * @width: takes in width of grid
+ * @height: height of grid
+ * Return: grid with freed spaces
  */
 
 int **alloc_grid(int width, int height)
 {
-	int **arr;
+	/*Declaring variables*/
+	int **grid;
 	int i, j;
 
-	i = j = 0;
-
 	if (width <= 0 || height <= 0)
+	{
 		return (NULL);
-	arr = malloc(height * sizeof(int *));
-	if (arr == NULL)
+	}
+
+	grid = malloc(sizeof(int *) * height); /*malloc*/
+
+	if (grid == NULL)
+	{
 		return (NULL);
+	}
+
 	for (i = 0; i < height; i++)
 	{
-		arr[i] = malloc(width * sizeof(int *));
-		if (arr[i] == NULL)
+		grid[i] = malloc(sizeof(int) * width);
+		if (grid[i] == NULL)
 		{
 			for (i = i - 1; i >= 0; i--)
 			{
-				free(arr[i]);
+				free(grid[i]);
 			}
-			free(arr);
+			free(grid);
 			return (NULL);
 		}
 	}
 	for (i = 0; j < width; j++)
-		arr[i][j] = 0;
-
-	return (arr);
+		grid[i][j] = 0;
+	return (grid);
 }
 
