@@ -26,7 +26,7 @@ char *str_concat(char *s1, char *s2)
 	unsigned int i, j, size;
 
 	if (s2 == 0)
-		return (NULL);
+		return (s2);
 
 	size = _strlen(s1) * _strlen(s2) + 1;
 
