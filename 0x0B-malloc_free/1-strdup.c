@@ -14,7 +14,7 @@ int _strlen(char *s)
 }
 
 /**
- *strdup - back a pointer to array
+ *_strdup - back a pointer to array
  *@str: pointer to array
  *Return: Always an array dinamic
  */
@@ -31,7 +31,7 @@ char *_strdup(char *str)
 
 	arr = (char *)malloc(size * sizeof(char));
 
-	if (str == 0)
+	if (arr == 0)
 		return (NULL);
 
 	for (i = 0; *(str + i) != '\0'; i++)
