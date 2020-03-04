@@ -7,5 +7,6 @@ char *_strdup(char *str);
 char *str_concat(char *s1, char *s2);
 int **alloc_grid(int, int);
 int _putchar(char c);
+char *argstostr(int ac, char **av);
 #endif /* HOLBERTON */
 
