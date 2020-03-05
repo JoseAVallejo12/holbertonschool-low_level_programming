@@ -9,27 +9,24 @@
 int *array_range(int min, int max)
 {
 	int *p;
-	unsigned int n;
-	int i, j;
-
-	j = 0;
+	unsigned int n, i;
 
 	if (min > max)
 		return (NULL);
 
-	n = (unsigned int)max - min;
+	n = 1 + ((unsigned int)max - min);
 
-	p = malloc(sizeof(int) * n + 1);
+	printf("%d valor de n\n", n);
+
+	p = malloc(sizeof(int) * n);
 	if (p == NULL)
 		return (NULL);
 
-	for (i = min; i <= max; i++)
+	for (i = 0; min <= max; i++)
 	{
-		*(p + j) = i;
-		j++;
+		p[i] = min;
+		min++;
 	}
-
-	*(p + j) = '\0';
 
 	return (p);
 
