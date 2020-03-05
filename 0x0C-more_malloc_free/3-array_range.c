@@ -14,9 +14,7 @@ int *array_range(int min, int max)
 	if (min > max)
 		return (NULL);
 
-	n = 1 + ((unsigned int)max - min);
-
-	printf("%d valor de n\n", n);
+	n = 1 + (max - min);
 
 	p = malloc(sizeof(int) * n);
 	if (p == NULL)
