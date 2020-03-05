@@ -14,36 +14,35 @@ int _strlen(char *s)
 }
 
 /**
- *str_concat - back a pointer to array
+ *string_nconcat - concatena two strin in new allocate memory
  *@s1: Array one
  *@s2: Array two
+ *@n: number the byte to copy the s2 to s1
  *Return: Always an array dinamic
  */
 
-char *str_concat(char *s1, char *s2)
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *arr;
-	unsigned int i, j, size;
-
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
+	unsigned int i, j, k, size;
 
 	size = _strlen(s1) + _strlen(s2) + 1;
 
 	arr = (char *)malloc(size * sizeof(char));
-
-	if (arr == 0)
+	if (arr == NULL)
 		return (NULL);
 
+	if (n >= (unsigned int)_strlen(s2))
+		j = (unsigned int)_strlen(s2);
+	else
+		j = n;
 
 	for (i = 0; *(s1 + i) != '\0'; i++)
 		*(arr + i) = *(s1 + i);
 
-	for (j = 0; *(s2 + j) != '\0'; j++)
+	for (k = 0; k < j; k++)
 	{
-		*(arr + i) = *(s2 + j);
+		*(arr + i) = *(s2 + k);
 		i++;
 	}
 	*(arr + i) = 0;
