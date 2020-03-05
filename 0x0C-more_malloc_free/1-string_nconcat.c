@@ -35,7 +35,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	arr = (char *)malloc(size * sizeof(char));
 	if (arr == NULL)
+	{
+		free(arr);
 		return (NULL);
+	}
 
 	if (n >= (unsigned int)_strlen(s2))
 		j = (unsigned int)_strlen(s2);
