@@ -26,6 +26,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *arr;
 	unsigned int i, j, k, size;
 
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
 	size = _strlen(s1) + _strlen(s2) + 1;
 
 	arr = (char *)malloc(size * sizeof(char));
