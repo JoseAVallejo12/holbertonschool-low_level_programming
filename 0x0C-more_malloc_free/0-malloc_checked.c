@@ -2,15 +2,15 @@
 
 /**
  *malloc_checked - allocated memory for pointer void
- * @d
- *
- * Return: int length of string
+ *@b: size to allocate
+ *Return: p
  */
 void *malloc_checked(unsigned int b)
 {
 	void *p;
+
 	p = malloc(b);
-	if(p == NULL)
+	if (p == NULL)
 		exit(98);
 	return (p);
 
