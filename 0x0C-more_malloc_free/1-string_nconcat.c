@@ -53,7 +53,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		*(arr + i) = *(s2 + k);
 		i++;
 	}
-	*(arr + i) = 0;
+	*(arr + i) = '\0';
 
 	return (arr);
 }
