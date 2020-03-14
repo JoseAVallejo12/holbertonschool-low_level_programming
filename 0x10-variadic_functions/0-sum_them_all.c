@@ -1,5 +1,5 @@
 #include "variadic_functions.h"
-
+#include <stdarg.h>
 /**
  * sum_them_all - sum all parameters variatic
  * @n: first parameter, number of inter in variatic var
@@ -9,11 +9,10 @@
 int sum_them_all(const unsigned int n, ...)
 {
 	va_list numbers;
+	double sum = 0;
+	unsigned int i;
 
 	va_start(numbers, n);
-
-	int sum = 0;
-	unsigned int i;
 
 	if (n == 0)
 		return (0);
