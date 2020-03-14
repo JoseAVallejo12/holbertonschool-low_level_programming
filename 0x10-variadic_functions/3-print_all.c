@@ -1,9 +1,9 @@
 #include "variadic_functions.h"
 
 /**
- *  * prt_char - print Character
- *   * @datos: funtion type variadic
- *    */
+ * prt_char - print Character
+ * @datos: funtion type variadic
+ */
 
 void prt_char(va_list datos)
 {
@@ -38,10 +38,12 @@ void prt_float(va_list datos)
 void prt_datos(va_list datos)
 {
 	char *p;
+
 	p = va_arg(datos, char *);
+
 	if (p == NULL)
 		p = "(nil)";
-	
+
 	printf("%s", p);
 }
 
