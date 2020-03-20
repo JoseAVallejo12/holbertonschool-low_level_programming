@@ -19,7 +19,7 @@ typedef struct list_s
 
 /* DINAMIC FUNTIONS */
 #include <stdio.h>
-
+#include <stdlib.h>
 /* FUNTIONS OWNER */
 size_t print_list(const list_t *h);
 size_t list_len(const list_t *h);
