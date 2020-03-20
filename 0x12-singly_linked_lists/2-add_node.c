@@ -1,5 +1,18 @@
 #include "lists.h"
-#include <string.h>
+
+/**
+ *_strlen - giving to array
+ *@s: pointer to array
+ *Return: Always an int
+ */
+
+int _strlen(const char *s)
+{
+	if (*s == '\0')
+		return (0);
+
+	return (1 + _strlen(s + 1));
+}
 
 /**
  * add_node - add new node in the front
@@ -28,7 +41,7 @@ list_t *add_node(list_t **head, const char *str)
 	else
 	{
 		new_node->str = strdup(str);
-		new_node->len = strlen(str);
+		new_node->len = _strlen(str);
 	}
 
 	new_node->next = *head;
