@@ -1,14 +1,14 @@
 #include "lists.h"
 
 /**
- * free_list - free heap memori allocated
+ * free_listint - free heap memori allocated
  * @head: header of the single listed linked
- * Return: Always voi
+ * Return: Always void
  **/
 
-void free_list(list_t *head)
+void free_listint(listint_t *head)
 {
-	list_t *nodes;
+	listint_t *nodes;
 
 	if (head == NULL)
 		return;
@@ -17,7 +17,7 @@ void free_list(list_t *head)
 	{
 		nodes = head;
 		head = head->next;
-		free(nodes->str);
+		nodes->n = '\0';
 		free(nodes);
 	}
 }
