@@ -10,25 +10,17 @@
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
 	/* pointer to found match with index value */
-	listint_t *match;
-	unsigned int i;
+	unsigned int i = 0;
 
 	/* if index is 0 return 0 */
 	if (index == 0)
 		return (0);
 
-	/**
-	 * find number of index only if is great than 0 and return
-	 * addres of the node an index possition
-	 */
-	i = 0;
 	while (head != NULL || i < index)
 	{
 		if (i == index)
-		{
-			match = head;
-			return (match);
-		}
+			return (head);
+
 		head = head->next;
 		i++;
 	}
