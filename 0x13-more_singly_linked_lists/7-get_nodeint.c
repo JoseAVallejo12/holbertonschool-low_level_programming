@@ -22,7 +22,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	 * addres of the node an index possition
 	 */
 	i = 0;
-	while (head != NULL)
+	while (head != NULL || i < index)
 	{
 		if (i == index)
 		{
