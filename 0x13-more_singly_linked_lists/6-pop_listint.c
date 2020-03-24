@@ -8,23 +8,22 @@
 
 int pop_listint(listint_t **head)
 {
-	/**
-	 *1 save dir of header
-	 * 2 find the next node
-	 * 3 erase node head
-	 * 4 pointer to head to new frist node
-	 */
-	if (head == NULL)
-		return (0);
 
 	listint_t *aux;
 	int dato;
+
+	if (*head == NULL)
+		return (0);
+
+
 
 	aux = *head;
 	dato = aux->n;
 	*head = aux->next;
 	aux->n = '\0';
 	free(aux);
+
+	aux = NULL;
 
 	return (dato);
 }
