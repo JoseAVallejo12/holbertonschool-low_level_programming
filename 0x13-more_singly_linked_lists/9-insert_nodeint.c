@@ -54,6 +54,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		*head = new_node;
 		return (new_node);
 	}
+	/* find match betwin idx and i var */
 	while (aux != NULL)
 	{
 		if (i == (idx - 1))
