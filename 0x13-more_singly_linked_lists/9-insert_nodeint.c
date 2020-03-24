@@ -17,7 +17,6 @@ int list_size(listint_t **h)
 		i++;
 		aux = aux->next;
 	}
-	i--;
 	return (i);
 }
 
@@ -44,11 +43,16 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	/* validate if the size of list and new_node is ok */
 	if (new_node == NULL || idx > size_list)
+	{
+		free(new_node);
 		return (NULL);
+	}
+
+	/* set data a new node */
+	new_node->n = n;
 
 	if (idx == 0)
 	{
-		new_node->n = n;
 		new_node->next = *head;
 		*head = new_node;
 	}
@@ -58,7 +62,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		if (i == (idx - 1))
 		{
 			new_node->next = aux->next;
-			new_node->n = n;
 			aux->next = new_node;
 			return (new_node);
 		}
