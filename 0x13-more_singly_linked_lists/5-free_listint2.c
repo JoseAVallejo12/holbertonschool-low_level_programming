@@ -1,28 +1,25 @@
 #include "lists.h"
-
 /**
- * free_listint2 - free heap memori allocated
- * @head: header of the single listed linked
- * Return: Always void
- **/
+ * free_listint2 -  free a list
+ * @head: pointer
+ * Return: void
+ */
 
 void free_listint2(listint_t **head)
 {
-	listint_t *nodes;
-	listint_t *aux;
+	/* var tem for fre memory allocated */
+	listint_t *temp;
 
-	if (*head == NULL)
+	if (head == NULL || *head == NULL)
 		return;
 
-	aux = *head;
-	while (aux != NULL)
+	/* travel all linked list for free memory allocated */
+	while ((*head)->next != NULL)
 	{
-		nodes = aux;
-		nodes->n = 0;
-		free(nodes);
-		aux = aux->next;
+		temp = (*head)->next;
+		free(*head);
+		*head = temp;
 	}
-	free(aux);
 	free(*head);
 	*head = NULL;
 }
