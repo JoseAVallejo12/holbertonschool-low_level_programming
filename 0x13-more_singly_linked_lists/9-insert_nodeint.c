@@ -1,9 +1,8 @@
 #include "lists.h"
 
 /**
- * listint_len - funtion for length elemnt
+ * list_size - funtion for length elemnt
  * @h: single list in
- * @length number of element an single list linked
  * Return: number of elemt in the linked lis
  */
 
@@ -18,13 +17,16 @@ int list_size(listint_t **h)
 		i++;
 		aux = aux->next;
 	}
-
+	i--;
 	return (i);
 }
 
 /**
- *
- *
+ * insert_nodeint_at_index - insert new node in the index possition
+ * @head: linked list
+ * @idx: index, it start in 0
+ * @n: data for new node
+ * Return: Always addres new node
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
@@ -32,14 +34,14 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	unsigned int size_list = list_size(head);
 	listint_t *aux = *head;
 	listint_t *new_node;
-	
+
 	/* validate if list is diferent of NULL */
 	if (head == NULL)
 		return (NULL);
 
 	/* create new node of the size the listint_t */
 	new_node = (listint_t *)malloc(sizeof(listint_t));
-	
+
 	/* validate if the size of list and new_node is ok */
 	if (new_node == NULL || idx > size_list)
 		return (NULL);
