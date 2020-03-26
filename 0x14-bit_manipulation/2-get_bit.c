@@ -10,7 +10,7 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned long int aux1, i = 0;
 	unsigned long int aux2 = n;
-	
+
 	while (aux2 > 0)
 	{
 		aux2 = aux2 >> 1;
