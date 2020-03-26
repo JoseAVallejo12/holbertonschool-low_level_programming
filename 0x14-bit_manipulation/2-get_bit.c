@@ -11,6 +11,10 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned long int aux1, i = 0;
 	unsigned long int aux2 = n;
 
+	/* 64 bit is the max len of memory register */
+	if (index > 64)
+		return (-1);
+
 	while (aux2 > 0)
 	{
 		aux2 = aux2 >> 1;
