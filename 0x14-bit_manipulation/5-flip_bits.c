@@ -1,9 +1,10 @@
 #include "holberton.h"
 
 /**
- * print_binary - funtion to print print number bynary
- * @n: number integer
- * Return: void
+ * flip_bits - funtion diff of bit amount two number integer
+ * @m: number integer one
+ * @n: number integer two
+ * Return: how much bit to be the diff amount buth
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
@@ -12,7 +13,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 	/* find diferencias en bit of the both numbers givend */
 	temp = aux2 = n ^ m;
-	
+
 	/* count number of bit in the integer n */
 	while (aux2 > 0)
 	{
