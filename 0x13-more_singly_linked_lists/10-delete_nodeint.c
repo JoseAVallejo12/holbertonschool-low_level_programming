@@ -43,6 +43,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		free(aux);
 		return (1);
 	}
+	/* travel the list find the index for delete node */
 	while (aux != NULL)
 	{
 		if (i == (index - 1))

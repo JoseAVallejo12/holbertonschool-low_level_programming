@@ -20,4 +20,7 @@ void free_listint(listint_t *head)
 		nodes->n = '\0';
 		free(nodes);
 	}
+	free(head);
+
 }
+
