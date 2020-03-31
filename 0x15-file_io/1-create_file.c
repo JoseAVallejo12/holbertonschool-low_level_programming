@@ -11,11 +11,14 @@ int create_file(const char *filename, char *text_content)
 {
 	int file_description, size = 0, fd;
 
+	if (filename == NULL)
+		return (-1);
+
 	/* if O_CREATE is especific must be set permision, */
 	/* O_TRUNC allowed overwrite file, if it exist */
 	file_description = open(filename, O_CREAT | O_RDWR | O_TRUNC, 00600);
 
-	if (file_description == -1 || filename == NULL)
+	if (file_description == -1)
 	{
 		close(file_description);
 		return (-1);
