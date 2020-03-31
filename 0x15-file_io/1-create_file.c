@@ -9,18 +9,27 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int file_description, size = 0;
+	int file_description, size = 0, fd;
 
 	file_description = open(filename, O_CREAT | O_WRONLY, 00600);
+
 	if (file_description == -1 || filename == NULL)
+	{
+		close(file_description);
 		return (-1);
+	}
 
 	while (*(text_content + size) != '\0')
 		size++;
 
 	if (text_content != NULL)
-		write(file_description, text_content, size);
+		fd = write(file_description, text_content, size);
 
 	close(file_description);
+
+if (fd == -1)
+	return (-1);
+
 	return (1);
 }
+
