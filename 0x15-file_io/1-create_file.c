@@ -20,6 +20,7 @@ int create_file(const char *filename, char *text_content)
 	if (file_description == -1)
 		return (-1);
 
+	/* if not be contex only create empty file */
 	if (text_content != NULL)
 	{
 		for (size = 0; text_content[size]; size++)
@@ -28,7 +29,7 @@ int create_file(const char *filename, char *text_content)
 		if (fd != size)
 			return (-1);
 	}
-
+	/* not is necesary close file, if all is done return 1 */
 	return (1);
 }
 
