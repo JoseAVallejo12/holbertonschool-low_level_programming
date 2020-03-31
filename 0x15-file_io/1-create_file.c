@@ -17,23 +17,17 @@ int create_file(const char *filename, char *text_content)
 	/* if O_CREATE is especific must be set permision, */
 	/* O_TRUNC allowed overwrite file, if it exist */
 	file_description = open(filename, O_CREAT | O_RDWR | O_TRUNC, 00600);
-
 	if (file_description == -1)
-	{
-		close(file_description);
 		return (-1);
-	}
-
-	for (size = 0; text_content[size]; size++)
-		;
 
 	if (text_content != NULL)
+	{
+		for (size = 0; text_content[size]; size++)
+			;
 		fd = write(file_description, text_content, size);
-
-	if (fd != size)
-		return (-1);
-
-	close(file_description);
+		if (fd != size)
+			return (-1);
+	}
 
 	return (1);
 }
