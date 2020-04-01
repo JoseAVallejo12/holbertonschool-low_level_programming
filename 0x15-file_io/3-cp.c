@@ -62,7 +62,7 @@ int main(int ac, char **files)
 	if (ac != 3)
 	{
 		dprintf(2, "Usage: cp file_from file_to\n");
-		exit(97);
+		return (97);
 	}
 	error = copy_from_to(files[1], files[2], &file_desct);
 	/* if file_from does not exist, exit with code 98 */
@@ -74,6 +74,6 @@ int main(int ac, char **files)
 	if (error == 100)
 		dprintf(2, "Error: Can't close fd %d\n", file_desct);
 
-	exit(error);
+	return (error);
 
 }
