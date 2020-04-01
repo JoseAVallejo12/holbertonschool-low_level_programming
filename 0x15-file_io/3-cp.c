@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#define BF_SIZE 1024
 /**
  * copy_from_to - funtion copy file to file
  * @name_from_file: name of file source
@@ -11,7 +11,7 @@
 int copy_from_to(const char *name_from_file, char *name_to_file, int *fds)
 {
 	int fd_file1, fd_file2, size = 0, fd;
-	char *bufer = (char *)malloc(1024);
+	char bufer[BF_SIZE];
 
 	if (bufer == NULL)
 		return (99);
@@ -20,25 +20,25 @@ int copy_from_to(const char *name_from_file, char *name_to_file, int *fds)
 		return (-1);
 
 	fd_file1 = open(name_from_file, O_RDONLY);
-	fd_file2 = open(name_to_file, O_CREAT | O_RDWR | O_TRUNC, 00664);
 	if (fd_file1 == -1)
 		return (98);
 
+	fd_file2 = open(name_to_file, O_CREAT | O_WRONLY | O_TRUNC, 00664);
 	if (fd_file2 == -1)
 		return (99);
+
 	size = read(fd_file1, bufer, 1024);
 
-	fd = write(fd_file2, bufer, size);
+	fd = write(fd_file2, &bufer, size);
 	if (fd != size)
 		return (99);
 
-	fd = close(fd_file2);
-	if (fd == -1)
+	if (close(fd_file2) == -1)
 	{
 		*fds = fd_file2;
 		return (100);
 	}
-	fd = close(fd_file1);
+	if (close(fd_file1) == -1)
 	{
 		*fds = fd_file1;
 		return (100);
@@ -62,7 +62,7 @@ int main(int ac, char **files)
 	if (ac != 3)
 	{
 		dprintf(2, "Usage: cp file_from file_to\n");
-		return (97);
+		exit(97);
 	}
 	error = copy_from_to(files[1], files[2], &file_desct);
 	/* if file_from does not exist, exit with code 98 */
@@ -74,6 +74,6 @@ int main(int ac, char **files)
 	if (error == 100)
 		dprintf(2, "Error: Can't close fd %d\n", file_desct);
 
-	return (error);
+	exit(error);
 
 }
