@@ -10,11 +10,8 @@
 
 int copy_from_to(const char *name_from_file, char *name_to_file, int *fds)
 {
-	int fd_file1, fd_file2, size = 0, fd;
+	int fd_file1, fd_file2, fd_rd, fd_wr;
 	char bufer[BF_SIZE];
-
-	if (bufer == NULL)
-		return (99);
 
 	if (name_from_file == NULL || name_to_file == NULL)
 		return (-1);
@@ -23,14 +20,16 @@ int copy_from_to(const char *name_from_file, char *name_to_file, int *fds)
 	if (fd_file1 == -1)
 		return (98);
 
+	fd_rd = read(fd_file1, bufer, 1024);
+	if (fd_rd == -1)
+		return (98);
+	
 	fd_file2 = open(name_to_file, O_CREAT | O_WRONLY | O_TRUNC, 00664);
 	if (fd_file2 == -1)
 		return (99);
 
-	size = read(fd_file1, bufer, 1024);
-
-	fd = write(fd_file2, &bufer, size);
-	if (fd != size)
+	fd_wr = write(fd_file2, &bufer, BF_SIZE);
+	if (fd_wr != BF_SIZE)
 		return (99);
 
 	if (close(fd_file2) == -1)
