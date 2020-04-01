@@ -40,7 +40,7 @@ int copy_from_to(const char *name_from_file, char *name_to_file)
 	fd_rd = read(fd_file1, bufer, 1024);
 	if (fd_rd == -1)
 	{
-		if (close_file(fd_file1) == -1 || close_file(fd_file2) == -1)
+		if (close_file(fd_file2) == -1)
 			return (100);
 		else
 			return (98);
@@ -49,7 +49,7 @@ int copy_from_to(const char *name_from_file, char *name_to_file)
 	fd_wr = write(fd_file2, bufer, BF_SIZE);
 	if (fd_wr != BF_SIZE)
 	{
-		if (close_file(fd_file1) == -1 || close_file(fd_file2) == -1)
+		if (close_file(fd_file2) == -1)
 			return (100);
 		else
 			return (99);
