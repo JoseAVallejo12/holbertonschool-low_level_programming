@@ -1,9 +1,9 @@
 #include "lists.h"
- /**
-  * free_dlistint - free double linked list
-  * Return: void
-  */
-
+/**
+ * free_dlistint - free double linked list
+ * @head: head of linked list
+ * Return: void
+ */
 void free_dlistint(dlistint_t *head)
 {
 	dlistint_t *aux = NULL;
@@ -20,4 +20,3 @@ void free_dlistint(dlistint_t *head)
 		aux = NULL;
 	}
 }
-
