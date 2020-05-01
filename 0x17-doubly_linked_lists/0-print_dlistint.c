@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * print_list - funtion for print single linked list
+ * print_dlistint - funtion for print single linked list
  * @h: single list in
  * Return: number of elemt in the linked lis
  */
