@@ -1,10 +1,10 @@
 #include "lists.h"
 /**
- * insert_dnodeint_at_index - Function that inserts 
- * @h: Pointer to head
- * @idx: Index to insert into
- * @n: Value to store in new node
- * Return: Address of new node, or NULL if failed
+ * insert_dnodeint_at_index - funtion
+ * @h: head
+ * @idx: index of linked list
+ * @n: data to save
+ * Return: address new pointer added
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
