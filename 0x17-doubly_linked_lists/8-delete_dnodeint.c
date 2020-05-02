@@ -1,48 +1,31 @@
 #include "lists.h"
 /**
- * insert_dnodeint_at_index - inset node in idx
- * @h: head linked list
- * @idx: index
- * @n: data to inset
- * Return: node address
- */
-
+  * delete_dnodeint_at_index - deletes a node at an index
+  * @head: double pointer to the head of the list
+  * @index: index of the node to delete
+  * Return: value of the node deleted
+  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	unsigned int i = 0;
-	dlistint_t *node_prev, *node_next = *head, *tmp;
-
-	if (index == 0 && head != NULL)
+	dlistint_t *tmp_del, *tmp_head;
+	if (!head || !*head)
+		return (-1);
+	tmp_head = *head;
+	if (index == 0)
 	{
-		if (node_next->next != NULL)
-			*head = node_next->next;
-		free(node_next);
+		*head = (*head)->next;
+		(*head)->prev = NULL;
+		free(tmp_head);
 		return (1);
 	}
-
-	while (node_next != NULL)
-	{
-		if (i == index && node_next->next == NULL)
-		{
-			node_prev->next = NULL;
-			free(node_next);
-			return (1);
-		}
-
-		if (i == index)
-		{
-			tmp = node_next;
-			node_next = node_next->next;
-			node_next->prev = node_prev;
-			if (node_prev != NULL)
-				node_prev->next = node_next;
-			free(tmp);
-			tmp = NULL;
-			return (1);
-		}
-		node_prev = node_next;
-		node_next = node_next->next;
-		i++;
-	}
-	return (-1);
+	for ( ; index > 1 && tmp_head && tmp_head->next; index--)
+		tmp_head = tmp_head->next;
+	if (!tmp_head->next)
+		return (-1);
+	tmp_del = tmp_head->next;
+	tmp_head->next = tmp_del->next ? tmp_del->next : NULL;
+	if (tmp_del->next)
+		tmp_del->next->prev = tmp_head;
+	free(tmp_del);
+	return (1);
 }
