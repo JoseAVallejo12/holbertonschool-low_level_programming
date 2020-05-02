@@ -1,36 +1,43 @@
 #include "lists.h"
 /**
- * insert_dnodeint_at_index - funtion
- * @h: head
- * @idx: index of linked list
- * @n: data to save
- * Return: address new pointer added
+ * insert_dnodeint_at_index - inset node in idx
+ * @h: head linked list
+ * @idx: index
+ * @n: data to inset
+ * Return: node address
  */
+
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new, *node_temp;
-	unsigned int i;
-
-	if (!h)
+	unsigned int i = 0;
+	dlistint_t *node_prev, *node_next = *h, *new;
+	/* validate */
+	if (*h == NULL)
 		return (NULL);
+	/* add node in the front */
 	if (idx == 0)
 		return (add_dnodeint(h, n));
-	node_temp = *h;
-	for (i = 0; node_temp && i < idx; i++)
-		node_temp = node_temp->next;
-	if (!node_temp && i == idx)
-		return (add_dnodeint_end(h, n));
-	else if (node_temp)
+	/* add node in the index */
+	while (node_next != NULL)
 	{
-		new = malloc(sizeof(dlistint_t));
-		if (new == NULL)
-			return (NULL);
-		new->n = n;
-		node_temp->prev->next = new;
-		new->prev = node_temp->prev;
-		node_temp->prev = new;
-		new->next = node_temp;
-		return (new);
+		if (i == idx)
+		{
+			new = malloc(sizeof(dlistint_t));
+			if (new == NULL)
+				return (NULL);
+
+			new->n = n;
+			new->next = node_next;
+			new->prev = node_prev;
+			node_next->prev = new;
+			node_prev->next = new;
+			return (new);
+		}
+		node_prev = node_next;
+		node_next = node_next->next;
+		i++;
 	}
+	if (i == idx)
+		return (add_dnodeint_end(h, n));
 	return (NULL);
 }
