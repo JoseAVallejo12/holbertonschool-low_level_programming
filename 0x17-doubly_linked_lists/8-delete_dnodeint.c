@@ -12,9 +12,10 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	unsigned int i = 0;
 	dlistint_t *node_prev, *node_next = *head, *tmp;
 
-	if (index == 0)
+	if (index == 0 && head != NULL)
 	{
-		*head = node_next->next;
+		if (node_next->next != NULL)
+			*head = node_next->next;
 		free(node_next);
 		return (1);
 	}
