@@ -13,7 +13,7 @@ int main(int argc, char **av)
 	int n = atoi(av[1]);
 
     head = NULL;
-/*	add_dnodeint_end(&head, 0);
+	add_dnodeint_end(&head, 0);
     add_dnodeint_end(&head, 1);
     add_dnodeint_end(&head, 2);
     add_dnodeint_end(&head, 3);
@@ -21,7 +21,7 @@ int main(int argc, char **av)
     add_dnodeint_end(&head, 98);
     add_dnodeint_end(&head, 402);
     add_dnodeint_end(&head, 1024);
-    print_dlistint(head);*/
+    print_dlistint(head);
     printf("-----------------\n");
     insert_dnodeint_at_index(&head, n, 4096);
     print_dlistint(head);
