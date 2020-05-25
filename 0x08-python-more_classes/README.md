@@ -49,6 +49,6 @@ At the end of this project, you are expected to be able to explain to anyone, **
 The first line of all your files should be exactly #!/usr/bin/python3
 - A README.md file, at the root of the folder of the project, is mandatory
 - Your code should use the PEP 8 style (version 1.7.*)
-- Lazy PEP8? Try Cohort 2 - San Francisco’s Kim Wong’s trick
+- Lazy PEP8? Try Cohort 2 - San Francisco’s [Kim Wong’s](https://twitter.com/kjowong) [trick](https://github.com/hhatto/autopep8)
 - All your files must be executable
 - The length of your files will be tested using wc
