@@ -8,6 +8,7 @@
 - [What is a HashTable Data Structure - Introduction to Hash Tables , Part 0](https://www.youtube.com/watch?v=MfhjkfocRR0)
 - [Hash function](https://en.wikipedia.org/wiki/Hash_function)
 - [Hash table](https://en.wikipedia.org/wiki/Hash_table)
+- [Hash Table Program in C](https://www.tutorialspoint.com/data_structures_algorithms/hash_table_program_in_c.htm)
 
 ## Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, **without the help of Google:**
