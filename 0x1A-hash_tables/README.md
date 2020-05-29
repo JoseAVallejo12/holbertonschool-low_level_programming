@@ -1,6 +1,6 @@
 <h1> <img src="https://firebasestorage.googleapis.com/v0/b/test-79d5b.appspot.com/o/c-programming.png?alt=media&token=05306204-35ff-42e4-8438-6e080e0156c4" alt="logo" width="50" height="50" > 0x1A.  C - Hash tables</h1>
 
-<img src="https://firebasestorage.googleapis.com/v0/b/test-79d5b.appspot.com/o/Hash_Table.JPG?alt=media&token=86d81bca-6876-4c22-a1cf-d47b4ca81229">
+<img src="https://firebasestorage.googleapis.com/v0/b/test-79d5b.appspot.com/o/Hash_Table.JPG?alt=media&token=c2253e93-dcc1-40f8-8bfa-f710084dc71e">
 
 ## Resources
 ### Read or watch:
