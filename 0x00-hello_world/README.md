@@ -90,3 +90,170 @@ done
 - Once saved, exit file and change permissions to apply to all users with ***chmod a+x betty***
 - Move the ***betty*** file into ***/bin/*** directory or somewhere else in your ***$PATH*** with ***sudo mv betty /bin/***
 You can now type ***betty <filename>*** to run the Betty linter!
+
+# Tasks
+
+### 0-preprocessor
+Write a script that runs a C file through the preprocessor and save the result into another file.
+- The C file name will be saved in the variable $CFILE (export CFILE='main.c')
+- The output should be saved in the file c
+output: 
+```
+❯ ./0-preprocessor
+❯ tail c
+
+
+
+
+
+# 8 "main.c"
+int main(void)
+{
+ return (0);
+}
+
+```
+
+## 1-compiler
+Write a script that compiles a C file but does not link.
+- The C file name will be saved in the variable $CFILE
+- The output file should be named the same as the C file, but with the extension .o instead of .c.
+    - Example: if the C file is main.c, the output file should be main.o
+output:
+```
+❯ ./1-compiler
+❯ cat -v main.o | head
+^?ELF^B^A^A^@^@^@^@^@^@^@^@^@^A^@>^@^A^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@P^B^@^@^@^@^@^@^@^@^@^@@^@^@^@^@^@@^@^L^@^K^@M-s^O^^M-zUHM-^IM-eM-8^@^@^@^@]M-C^@GCC: (Ubuntu 9.3.0-10ubuntu2) 9.3.0^@^@^@^@^@^D^@^@^@^P^@^@^@^E^@^@^@GNU^@^B^@^@M-@^D^@^@^@^C^@^@^@^@^@^@^@^T^@^@^@^@^@^@^@^AzR^@^Ax^P^A^[^L^G^HM-^P^A^@^@^\^@^@^@^\^@^@^@^@^@^@^@^O^@^@^@^@E^N^PM-
+```
+
+## 2-assembler
+Write a script that generates the assembly code of a C code and save it in an output file.
+
+- The C file name will be saved in the variable $CFILE
+- The output file should be named the same as the C file, but with the extension .s instead of .c.
+    - Example: if the C file is main.c, the output file should be main.s
+output:
+```
+❯ ./2-assembler
+❯ cat main.s
+        .file   "main.c"
+        .text
+        .globl  main
+        .type   main, @function
+main:
+.LFB0:
+        .cfi_startproc
+        endbr64
+        pushq   %rbp
+        .cfi_def_cfa_offset 16
+        .cfi_offset 6, -16
+        movq    %rsp, %rbp
+        .cfi_def_cfa_register 6
+        movl    $0, %eax
+        popq    %rbp
+        .cfi_def_cfa 7, 8
+        ret
+        .cfi_endproc
+.LFE0:
+        .size   main, .-main
+        .ident  "GCC: (Ubuntu 9.3.0-10ubuntu2) 9.3.0"
+        .section        .note.GNU-stack,"",@progbits
+        .section        .note.gnu.property,"a"
+        .align 8
+        .long    1f - 0f
+        .long    4f - 1f
+        .long    5
+0:
+        .string  "GNU"
+1:
+        .align 8
+        .long    0xc0000002
+        .long    3f - 2f
+2:
+        .long    0x3
+3:
+        .align 8
+4:
+
+```
+
+## 3-name
+Write a script that compiles a C file and creates an executable named cisfun.
+
+- The C file name will be saved in the variable $CFILE
+outputs:
+```
+❯ chmod u+x 3-name
+❯ ./3-name
+❯ ls
+0-preprocessor 1-compiler 3-name 5-printf.c  c main.c  main.s 2-assembler 4-puts.c  6-size.c  cisfun  main.o
+```
+
+## 4-puts.c
+Write a C program that prints exactly "Programming is like building a multilingual puzzle", followed by a new line.
+
+- Use the function puts
+- You are not allowed to use printf
+- Your program should end with the value 0
+outputs:
+```
+❯ gcc 4-puts.c && ./a.out
+"Programming is like building a multilingual puzzle
+❯ echo $?
+0
+```
+
+## 5-printf.c
+Write a C program that prints exactly "with proper grammar, but the outcome is a piece of art,", followed by a new line.
+
+- Use the function printf
+- You are not allowed to use the function puts
+- Your program should return 0
+- Your program should compile without warning when using the -Wall gcc option
+output:
+```
+❯ gcc -Wall 5-printf.c && ./a.out
+with proper grammar, but the outcome is a piece of art,
+❯ echo $?
+0
+```
+
+## 6-size.c
+Write a C program that prints the size of various types on the computer it is compiled and run on.
+
+- You should produce the exact same output as in the example
+- Warnings are allowed
+- Your program should return 0
+- You might have to install the package libc6-dev-i386 on your - Linux (Vagrant) to test the -m32 gcc option
+output:
+```
+❯ gcc 6-size.c -m32 -o size32 2> /tmp/32
+❯ gcc 6-size.c -m64 -o size64 2> /tmp/64
+❯ ./size32
+Size of a char: 1 byte(s)
+Size of an int: 4 byte(s)
+Size of a long int: 4 byte(s)
+Size of a long long int: 8 byte(s)
+Size of a float: 4 byte(s)
+❯ ./size64
+Size of a char: 1 byte(s)
+Size of an int: 4 byte(s)
+Size of a long int: 8 byte(s)
+Size of a long long int: 8 byte(s)
+Size of a float: 4 byte(s)
+```
+## 101-quote.c
+Write a C program that prints exactly and that piece of art is useful" - Dora Korpar, 2015-10-19, followed by a new line, to the standard error.
+
+- You are not allowed to use any functions listed in the NAME section of the man (3) printf or man (3) puts
+- Your program should return 1
+- Your program should compile without any warnings when using the -Wall gcc option
+- Dora Korpar - Cohort 0, San Francisco
+output:
+```
+❯ gcc -Wall 101-quote.c -o quote
+❯ ./quote
+and that piece of art is useful" - Dora Korpar, 2015-10-19
+❯ echo $?
+1
+```
