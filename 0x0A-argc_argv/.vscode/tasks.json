@@ -1,0 +1,31 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "shell: gcc build active file",
+			"command": "/usr/bin/gcc",
+			"args": [
+				"-g",
+				"-Wall",
+				"-Werror",
+				"-Wextra",
+				"-pedantic",
+				"${file}",
+				"${fileDirname}/_putchar.c",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}"
+			],
+			"options": {
+				"cwd": "/usr/bin"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
