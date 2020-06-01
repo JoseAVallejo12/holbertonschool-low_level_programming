@@ -1,0 +1,83 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{// task for compile one files with gccWp
+			"type": "shell",
+			"label": "shell: gccWp for one file",
+			"command": "/usr/bin/gcc",
+			"args": [
+				"-g",
+				"-Wall",
+				"-Wextra",
+				"-Werror",
+				"-pedantic",
+				"${file}",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}"
+			],
+			"options": {
+				"cwd": "/usr/bin"
+			},
+			//the handle error output will be with gcc
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{// task for compile many files with gccWp
+			"type": "shell",
+			"label": "shell: gccWp for many file",
+			"command": "/usr/bin/gcc",
+			"args": [
+				"-g",
+				"${fileDirname}/*.c",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}"
+			],
+			"options": {
+				"cwd": "/usr/bin"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{// task for open file compilated
+			"type": "shell",
+			"label": "shell: run and compiled one file",
+			"command": "${fileDirname}/${fileBasenameNoExtension}",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			//in this task open file not need handle error only "go" and run task
+			"problemMatcher":[
+				"$go"
+			],
+			//this task only run after ejecute gccwp task
+			"dependsOn":["shell: gccWp for one file"]
+		},
+		{// task for open files compilated
+			"type": "shell",
+			"label": "shell: run and compiled many file",
+			"command": "${fileDirname}/${fileBasenameNoExtension}",
+			//witout this option i don't can see task with ctrl+shif+b
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			//in this task open file not need handle error only "go" and run task
+			"problemMatcher":[
+				"$go"
+			],
+			//this task only run after ejecute gccwp task
+			"dependsOn":["shell: gccWp for many file"]
+		}
+	]
+}
