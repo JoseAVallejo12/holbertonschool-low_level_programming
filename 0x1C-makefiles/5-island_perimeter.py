@@ -43,4 +43,4 @@ def island_perimeter(grid):
         for j in range(len(grid[i])):
             perimeter += eval_grid(grid, i, j)
 
-    return perimeter.__str__()
+    return perimeter
