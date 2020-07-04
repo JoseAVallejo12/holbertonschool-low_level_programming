@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Calculate perimeter."""
+
 
 def eval_grid(grid, i, j):
     """Evaluate the four side
