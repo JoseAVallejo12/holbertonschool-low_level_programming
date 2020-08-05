@@ -26,7 +26,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buf);
 		return (0);
 	}
-	
+
 	/* if fauilure read file return 0 */
 	read_int = read(fb, buf, letters);
 	close(fb);
@@ -38,10 +38,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	/* add null caracter for indicate finish of string */
 	buf[read_int] = '\0';
-	wr = write(STDOUT_FILENO, buf, read_int)
+	wr = write(STDOUT_FILENO, buf, read_int);
 	if (wr == -1)
 		wr = 0;
-	free(buf)
+	free(buf);
 
 	return (wr);
 }

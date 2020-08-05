@@ -11,7 +11,7 @@ int main(void)
     dlistint_t *new;
     dlistint_t hello = {8, NULL, NULL};
     size_t n;
-                             
+
     head = &hello;
     new = malloc(sizeof(dlistint_t));
     if (new == NULL)
