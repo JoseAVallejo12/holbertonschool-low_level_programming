@@ -1,22 +1,27 @@
 # 0x1E. C - Search Algorithms
 
 ## Resources
+
 **Read or watch:**
 
 - Search algorithm
 - Space complexity (1)
 
 ## Learning Objectives
+
 At the end of this project, you are expected to be able to explain to anyone, **without the help of Google:**
 
 ## General
+
 - What is a search algorithm
 - What is a linear search
 - What is a binary search
 - What is the best search algorithm to use depending on your needs
 
 ## Requirements
+
 ## General
+
 - Allowed editors: vi, vim, emacs
 - All your files will be compiled on Ubuntu 14.04 LTS
 - Your programs and functions will be compiled with gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic
@@ -30,15 +35,16 @@ At the end of this project, you are expected to be able to explain to anyone, **
 - The prototypes of all your functions should be included in your header file called search_algos.h
 - Don’t forget to push your header file
 - All your header files should be include guarded
-# More Info
+
+## More Info
+
 You will be asked to write files containing big O notations. Please use this format:
 
 - O(1)
 - O(n)
 - O(n!)
-- n*m -> O(nm)
+- n\*m -> O(nm)
 - n square -> O(n^2)
 - sqrt n -> O(sqrt(n))
 - log(n) -> O(log(n))
-- n * log(n) -> O(nlog(n))
-…
+- n \* log(n) -> O(nlog(n))
