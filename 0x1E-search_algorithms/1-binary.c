@@ -5,21 +5,22 @@
  * @limt_low: point to start print
  * @limt_high: point to stop the print value
  */
-
 void print_array(int *array, int limt_low, int limt_high)
 {
 	char *s = ", ";
-	int i;
+	int i = 0;
 
 	printf("Searching in array: ");
-
-	for (i = limt_low; i < limt_high; i++)
+	if (limt_low < limt_high)
 	{
-		printf("%d", array[i]);
-		if (i < limt_high - 1)
-			printf("%s", s);
+		for (i = limt_low; i <= limt_high; i++)
+		{
+			printf("%d", array[i]);
+			if (i < limt_high)
+				printf("%s", s);
+		}
+		printf("\n");
 	}
-	printf("\n");
 }
 
 /**
@@ -33,39 +34,25 @@ void print_array(int *array, int limt_low, int limt_high)
 int binary_search(int *array, size_t size, int value)
 {
 	int low = 0;
-	int high = size;
-	int midle = 0;
+	int high = size - 1;
+	int midle = high / 2;
 
 	if (array == NULL)
 		return (-1);
 
-	if (size % 2 == 0)
-		midle = (((size - low) / 2) - 1);
-	else
-		midle = ((size - low) / 2);
-
-	while (1)
+	while (low < high)
 	{
 		print_array(array, low, high);
+
 		if (array[midle] == value)
-		{
-			print_array(array, midle, high);
 			return (midle);
-		}
 
 		else if (array[midle] < value)
-		{
 			low = midle + 1;
-			if (low == high)
-				break;
-			midle = low + ((high - low) / 2);
-		}
 		else
-		{
 			high = midle - 1;
-			midle = low + ((high - low) / 2);
-		}
+		midle = low + (high - low) / 2;
 	}
-	printf("Searching in array: %d\n", array[high - 1]);
+	printf("Searching in array: %d\n", array[high]);
 	return (-1);
 }
