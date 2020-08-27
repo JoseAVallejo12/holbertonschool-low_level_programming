@@ -45,7 +45,11 @@ int binary_search(int *array, size_t size, int value)
 		print_array(array, low, high);
 
 		if (array[midle] == value)
+		{
+			if (midle != low)
+				print_array(array, midle, high);
 			return (midle);
+		}
 
 		else if (array[midle] < value)
 			low = midle + 1;
